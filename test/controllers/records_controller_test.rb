@@ -3,6 +3,7 @@ require 'test_helper'
 class RecordsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @record = records(:one)
+    @record.zone = Zone.create(domain_name: "valid.domain")
   end
 
   test "should get index" do
